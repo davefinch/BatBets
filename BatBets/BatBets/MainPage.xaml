@@ -6,9 +6,32 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Welcome to BATBets for Android!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Picker Title="Your Name" HorizontalOptions="FillAndExpand">
+            <Picker.Items>
+                <x:String>Alex</x:String>
+                <x:String>Clyde</x:String>
+                <x:String>Dowsa</x:String>
+                <x:String>Dave D</x:String>
+                <x:String>Dave F</x:String>
+                <x:String>Gabe</x:String>
+                <x:String>Hayley</x:String>
+                <x:String>Lincoln</x:String>
+                <x:String>Michael</x:String>
+                <x:String>Neil</x:String>
+                <x:String>Robert J</x:String>
+                <x:String>Roger</x:String>
+                <x:String>Ross</x:String>
+                <x:String>Scott</x:String>
+                <x:String>Stuart</x:String>
+                <x:String>Sue</x:String>
+                <x:String>Tony</x:String>
+            </Picker.Items>
+        </Picker>
+        <Entry x:Name="selection" Placeholder="Enter Team Selection" />
+        <Button Text="Upload Teams" Clicked="Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>

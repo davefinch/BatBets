@@ -13,5 +13,12 @@ namespace BatBets
         {
             InitializeComponent();
         }
+
+        int count = 0;
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Google google = new Google();
+            google.UploadTeams("ihugjhhj", "gviutfuygiygiyu");
+        }
     }
 }
