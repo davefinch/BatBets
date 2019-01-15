@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+
 namespace BatBets
 {
     public partial class MainPage : ContentPage
@@ -12,13 +13,19 @@ namespace BatBets
         public MainPage()
         {
             InitializeComponent();
+
         }
 
         int count = 0;
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             Google google = new Google();
-            google.UploadTeams("ihugjhhj", "gviutfuygiygiyu");
+            
+            //google.UpdateCount("ihugjhhj", "gviutfuygiygiyu");
+            var result = await google.UpdateCount(pick1.SelectedItem.ToString(), selection.Text);
+            await DisplayAlert("Result", result, "OK");
         }
+
+
     }
 }

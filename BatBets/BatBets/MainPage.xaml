@@ -9,7 +9,7 @@
         <Label Text="Welcome to BATBets for Android!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-        <Picker Title="Your Name" HorizontalOptions="FillAndExpand">
+        <Picker x:Name="pick1" Title="Your Name" HorizontalOptions="StartAndExpand">
             <Picker.Items>
                 <x:String>Alex</x:String>
                 <x:String>Clyde</x:String>
