@@ -13,7 +13,6 @@ namespace BatBets
         public MainPage()
         {
             InitializeComponent();
-
         }
 
         int count = 0;

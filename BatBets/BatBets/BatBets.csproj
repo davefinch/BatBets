@@ -14,10 +14,4 @@
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.37.0.1471" />
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Update="credentials.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 </Project>
