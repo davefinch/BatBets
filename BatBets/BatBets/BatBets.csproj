@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <ApplicationIcon></ApplicationIcon>
+    <Win32Resource />
+    <Company>Logical Systems Developemnt Ltd</Company>
+    <Copyright>© LSD 2019</Copyright>
+    <Description>The Next Generation Tool to Increase Lincoln's College Fund!</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -12,6 +17,8 @@
   <ItemGroup>
     <PackageReference Include="Google.Apis.Drive.v3" Version="1.37.0.1466" />
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.37.0.1471" />
+    <PackageReference Include="Toasts.Forms.Plugin" Version="3.3.2" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
   </ItemGroup>
 </Project>

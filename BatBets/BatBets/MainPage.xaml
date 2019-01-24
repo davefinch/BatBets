@@ -4,34 +4,104 @@
              xmlns:local="clr-namespace:BatBets"
              x:Class="BatBets.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to BATBets for Android!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Picker x:Name="pick1" Title="Your Name" HorizontalOptions="StartAndExpand">
-            <Picker.Items>
-                <x:String>Alex</x:String>
-                <x:String>Clyde</x:String>
-                <x:String>Dowsa</x:String>
-                <x:String>Dave D</x:String>
-                <x:String>Dave F</x:String>
-                <x:String>Gabe</x:String>
-                <x:String>Hayley</x:String>
-                <x:String>Lincoln</x:String>
-                <x:String>Michael</x:String>
-                <x:String>Neil</x:String>
-                <x:String>Robert J</x:String>
-                <x:String>Roger</x:String>
-                <x:String>Ross</x:String>
-                <x:String>Scott</x:String>
-                <x:String>Stuart</x:String>
-                <x:String>Sue</x:String>
-                <x:String>Tony</x:String>
-            </Picker.Items>
-        </Picker>
-        <Entry x:Name="selection" Placeholder="Enter Team Selection" />
-        <Button Text="Upload Teams" Clicked="Button_Clicked"/>
-    </StackLayout>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="25" Padding="0" x:Name="stackLayoutMain">
+            <Image Source="ball.png" HorizontalOptions="Center" />
+            <Label FontSize="30" 
+                   Text="BATBets 2019" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalTextAlignment="Center"></Label>
 
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label FontSize="20" 
+                x:Name="stats" 
+                TextColor="#377CC1"
+                x:FieldModifier="public" 
+                Text="Position: ....   Winnings: £....                    Total Wins: .. Last Win: ../../...."
+                HorizontalOptions="Center" 
+                VerticalOptions="StartAndExpand" 
+                HorizontalTextAlignment="Center"
+                       Grid.Row="0" Grid.Column="0"/>
+
+                <ActivityIndicator x:Name="spinner2" Color="#377CC1" IsRunning="False" Grid.Row="0" Grid.Column="0"/>
+            </Grid>
+
+            <Label FontSize="14" 
+                   Text="When uploading wait for the confirmation message to ensure your bets have been placed." 
+                   HorizontalOptions="Start" 
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalTextAlignment="Center"></Label>
+
+            <Picker x:Name="pick1" Title="Your Name" SelectedIndexChanged="Pick1_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Alex</x:String>
+                    <x:String>Clyde</x:String>
+                    <x:String>Dowsa</x:String>
+                    <x:String>Dave D</x:String>
+                    <x:String>Dave F</x:String>
+                    <x:String>Gabe</x:String>
+                    <x:String>Hayley</x:String>
+                    <x:String>Lincoln</x:String>
+                    <x:String>Michael</x:String>
+                    <x:String>Neil</x:String>
+                    <x:String>Robert J</x:String>
+                    <x:String>Roger</x:String>
+                    <x:String>Ross</x:String>
+                    <x:String>Scott</x:String>
+                    <x:String>Stuart</x:String>
+                    <x:String>Sue</x:String>
+                    <x:String>Tony</x:String>
+                </Picker.Items>
+            </Picker>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Entry x:Name="selection" Placeholder="Enter Team Selection" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <!-- Add a clear text icon -->
+                <Image x:Name="clearSearch" Source="delete_gray.png" Grid.Row="0" Grid.Column="1" HeightRequest="26" WidthRequest="26" HorizontalOptions="End">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSearchTap" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:FieldModifier="public" 
+                        VerticalOptions="StartAndExpand" 
+                        HorizontalOptions="CenterAndExpand" 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Text="Upload Teams" 
+                        Clicked="Button_Clicked" 
+                        x:Name="buttonActivate"/>
+                <ActivityIndicator x:Name="spinner" Color="Gray" IsRunning="False" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+            </Grid>
+
+        </StackLayout>
+
+    </ContentPage.Content>
 </ContentPage>

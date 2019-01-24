@@ -31,5 +31,19 @@ namespace BatBets
   
             }
         }
+
+        public async Task<string> GetStats(string name)
+        {
+            var baseAddr = new Uri("https://batbetsapi.azurewebsites.net");
+            using (var client = new HttpClient { BaseAddress = baseAddr })
+
+            {
+
+                var returnedJson = await client.GetStringAsync($"/api/User/{name}");
+                return returnedJson;
+
+            }
+        }
+
     }
 }
